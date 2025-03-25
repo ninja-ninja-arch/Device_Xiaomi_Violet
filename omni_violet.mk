@@ -8,8 +8,14 @@
 # Inherit from violet device
 $(call inherit-product, device/xiaomi/violet/device.mk)
 
-# Inherit some common SuperiorOS stuff.
-$(call inherit-product, vendor/droidx/config/common.mk)
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # MiuiCamera
 $(call inherit-product, vendor/MiuiCamera/config.mk)
@@ -27,13 +33,13 @@ TARGET_ENABLE_BLUR := false
 TARGET_DEBLOAT := true
 
 # Bootanimation Resolution
-TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_BOOTANIMATION_SIZE := 1080p
 
 # Charging Animation
 TARGET_INCLUDE_PIXEL_CHARGER := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := droidx_violet
+PRODUCT_NAME := omni_violet
 PRODUCT_DEVICE := violet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7 Pro
