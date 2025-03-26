@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_violet.mk
+    $(LOCAL_DIR)/lineage_violet.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_violet-ap1a-eng \
-    omni_violet-ap1a-userdebug \
-    omni_violet-ap1a-user
+    lineage_violet-ap1a-eng \
+    lineage_violet-ap1a-userdebug \
+    lineage_violet-ap1a-user
