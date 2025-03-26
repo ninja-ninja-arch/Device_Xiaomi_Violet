@@ -8,14 +8,8 @@
 # Inherit from violet device
 $(call inherit-product, device/xiaomi/violet/device.mk)
 
-# Get the prebuilt list of APNs
-$(call inherit-product, vendor/omni/config/gsm.mk)
-
-# Add common definitions for Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
-
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit some common Lineage stuff.
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # MiuiCamera
 $(call inherit-product, vendor/MiuiCamera/config.mk)
@@ -23,8 +17,10 @@ $(call inherit-product, vendor/MiuiCamera/config.mk)
 # Droidx Props
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_SUPPORTS_CALL_RECORDING := true
-DROIDX_BUILD_TYPE := OFFICIAL
-# DROIDX_GAPPS := true
+BLACKIRON_BUILDTYPE := UNOFFICIAL
+BLACKIRON_MAINTAINER := NINJA
+WITH_GMS := true
+WITH_GMS_VARIANT := pico
 
 # Device Props
 TARGET_FACE_UNLOCK_SUPPORTED := true
@@ -39,7 +35,7 @@ TARGET_BOOTANIMATION_SIZE := 1080p
 TARGET_INCLUDE_PIXEL_CHARGER := true
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := omni_violet
+PRODUCT_NAME := lineage_violet
 PRODUCT_DEVICE := violet
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 7 Pro
@@ -49,3 +45,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     DeviceProduct=violet
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# Inherit from release keys
+$(call inherit-product, vendor/lineage-priv/keys/keys.mk)
