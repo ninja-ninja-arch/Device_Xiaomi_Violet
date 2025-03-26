@@ -2,5 +2,5 @@
 #ro.droidx.maintainer=Dr.Opto
 
 #Device info.prop
-ro.omni.chipset=Snapdragon 675
-ro.omni.display_resolution=6.3" IPS LCD 1080x2340
+ro.blackiron.chipset=Snapdragon 675
+ro.blackiron.display_resolution=6.3" IPS LCD 1080x2340
