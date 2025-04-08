@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_violet.mk
+    $(LOCAL_DIR)/xperience_violet.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_violet-ap1a-eng \
-    lineage_violet-ap1a-userdebug \
-    lineage_violet-ap1a-user
+    xperience_violet-ap1a-eng \
+    xperience_violet-ap1a-userdebug \
+    xperience_violet-ap1a-user
